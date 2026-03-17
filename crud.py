@@ -1,7 +1,14 @@
+from IPython.display import clear_output
+
+def enter():
+  input("Pressione ENTER para continuar.")
+
 #declaração da lista
 nomeUsuario = []
 
 while True:
+
+  clear_output()
 
   print("|---------- CRUD ----------|")
   print("|   1- Adicionar Usuário   |")
@@ -36,7 +43,7 @@ while True:
             print("Letras não são aceitas, por favor insira números. ")
 
 
-      #valida se é vazio ou nao, uso de variavel temporaria e strip
+      #cadastros
       for i in range(qtdUsuario):
         while True:
             nomeDigitado = (input("Nome: "))
@@ -44,17 +51,21 @@ while True:
               break
             else:
               print("Digite um nome, por favor. ")
-              
-        #depois de validado, entra na lista
-        nomeUsuario.append(nomeDigitado)
+
+        nomeUsuario.append(nomeDigitado.strip())
+        print("Usuário Cadastrado com Sucesso!")
+      enter()
 
     case 2:
       #listagem de cadastros
       if (len(nomeUsuario) > 0):
         for i in range(len(nomeUsuario)) :
           print(f'{i+1} - {nomeUsuario[i]}')
+
+        enter()
       else: 
         print("Nenhum usuário cadastrado até o momento!")
+        enter()
 
     case 3:
       #editar usuario
@@ -82,10 +93,15 @@ while True:
         #edição
         if (respostaEditar == "s"):
           nomeUsuario[numEdit - 1] = (input('Insira o nome correto: '))
+          print("Cadastro Editado!!")
         else:
           print("Operação Cancelada!")
+
+        enter()
+
       else:
         print("Nenhum usuário cadastrado até o momento!")
+        enter()
 
 
     case 4:
@@ -116,8 +132,11 @@ while True:
             print("Usuário deletado com sucesso!")
         else:
           print("Operação Cancelada!")
+        enter()
+
       else: 
         print("Nenhum usuário cadastrado até o momento!")
+        enter()
         
     case 5:
       #terminar o programa
