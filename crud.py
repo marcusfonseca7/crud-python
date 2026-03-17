@@ -1,5 +1,3 @@
-tamanhoLista = 0
-
 while True:
 
   print("|---------- CRUD ----------|")
@@ -40,24 +38,23 @@ while True:
       #cadastros e contador de lista
       for i in range(qtdUsuario):
         nomeUsuario[i] = input("Nome: ")
-        tamanhoLista += 1
 
     case 2:
       #listagem de cadastros
-      for i in range(tamanhoLista) :
+      for i in range(len(nomeUsuario)) :
         print(f'{i+1} - {nomeUsuario[i]}')
 
 
     case 3:
       #editar usuario
-      for i in range(tamanhoLista) :
+      for i in range(len(nomeUsuario)) :
         print(f'{i+1} - {nomeUsuario[i]}')
       
       #validação de escolha do indice
       while True:
         try:
           numEdit = int(input('Qual deseja editar?'))
-          if (numEdit >= 1 and numEdit <= tamanhoLista):
+          if (numEdit >= 1 and numEdit <= len(nomeUsuario)):
               break
           else:
               print("Digite uma opção válida, por favor. ")
@@ -76,13 +73,13 @@ while True:
 
     case 4:
       #deletar usuario
-      for i in range(tamanhoLista) :
+      for i in range(len(nomeUsuario)) :
         print(f'{i+1} - {nomeUsuario[i]}')
 
       while True:
         try:
           numDelete = int(input('Qual deseja deletar?'))
-          if (numDelete >= 1 and numDelete <= tamanhoLista):
+          if (numDelete >= 1 and numDelete <= len(nomeUsuario)):
               break
           else:
               print("Digite uma opção válida, por favor. ")
@@ -99,7 +96,6 @@ while True:
       if (respostaDeletar == "s"):
           del nomeUsuario[numDelete - 1]
           print("Usuário deletado com sucesso!")
-          tamanhoLista -= 1
 
     case 5:
       #terminar o programa
