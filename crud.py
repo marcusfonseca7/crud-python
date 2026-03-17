@@ -92,11 +92,15 @@ while True:
 
         #edição
         if (respostaEditar == "s"):
-          nomeUsuario[numEdit - 1] = (input('Insira o nome correto: '))
-          print("Cadastro Editado!!")
+          while True:
+            nomeUsuario[numEdit - 1] = (input("Insira o nome correto: ").strip())
+            if (nomeUsuario[numEdit - 1].strip() != ""):
+                print("Usuário Editado!!")
+                break
+            else:
+                print("Digite um nome, por favor. ")
         else:
           print("Operação Cancelada!")
-
         enter()
 
       else:
