@@ -34,7 +34,7 @@ Projeto de um sistema CRUD (Create, Read, Update, Delete) desenvolvido em Python
 
 ## 💡 Objetivo do projeto
 
-Este projeto foi desenvolvido com o objetivo de praticar conceitos fundamentais de programação, como:
+Este projeto foi desenvolvido com o objetivo de fortalecer minha base em programação, trabalhando conceitos fundamentais como:
 
 - Lógica de programação
 
@@ -42,8 +42,9 @@ Este projeto foi desenvolvido com o objetivo de praticar conceitos fundamentais 
 
 - Controle de fluxo
 
-- Manipulação de listas
+- Manipulação de estruturas de dados
 
+Além disso, busquei melhorar a experiência do usuário mesmo em um ambiente de terminal, simulando uma interface mais limpa e organizada.
 ## 🔄 Próximos passos
 
 - 🔧 Refatorar o código utilizando funções para melhorar organização e reutilização
