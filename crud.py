@@ -2,7 +2,6 @@ tamanhoLista = 0
 
 while True:
 
-
   print("|---------- CRUD ----------|")
   print("|   1- Adicionar Usuário   |")
   print("|   2- Listar Usuários     |")
@@ -53,23 +52,44 @@ while True:
       #editar usuario
       for i in range(tamanhoLista) :
         print(f'{i+1} - {nomeUsuario[i]}')
-      numEdit = int(input('Qual deseja editar?'))
-      respostaEditar = input(f"Tem certeza que deseja editar o cadastro: {nomeUsuario[numEdit - 1]}? [s/n]")
+      
+      #validação de escolha do indice
+      while True:
+        try:
+          numEdit = int(input('Qual deseja editar?'))
+          if (numEdit >= 1 and numEdit <= tamanhoLista):
+              break
+          else:
+              print("Digite uma opção válida, por favor. ")
+        except ValueError:
+            print("Letras não são aceitas, por favor insira números, de 1 a 5.")
+
+      respostaEditar = input(f"Tem certeza que deseja editar o cadastro: '{nomeUsuario[numEdit - 1]}'? [s/n] ")
 
       #validação de resposta
       while ((respostaEditar != "s" and respostaEditar != "n")):
         respostaEditar = input(f"Resposta inválida, digite 's' para sim ou 'n' para não ")
 
       #edição
-      if (respostaDeletar == "s"):
+      if (respostaEditar == "s"):
         nomeUsuario[numEdit - 1] = (input('Insira o nome correto: '))
 
     case 4:
       #deletar usuario
       for i in range(tamanhoLista) :
         print(f'{i+1} - {nomeUsuario[i]}')
-      numDelete = int(input('Qual deseja deletar?'))
-      respostaDeletar = input(f"Tem certeza que deseja deletar o cadastro: {nomeUsuario[numDelete - 1]}? [s/n]")
+
+      while True:
+        try:
+          numDelete = int(input('Qual deseja deletar?'))
+          if (numDelete >= 1 and numDelete <= tamanhoLista):
+              break
+          else:
+              print("Digite uma opção válida, por favor. ")
+        except ValueError:
+            print("Letras não são aceitas, por favor insira números, de 1 a 5.")
+            
+      respostaDeletar = input(f"Tem certeza que deseja deletar o cadastro: '{nomeUsuario[numDelete - 1]}'? [s/n] ")
 
       #validação de resposta
       while ((respostaDeletar != "s" and respostaDeletar != "n")):
@@ -78,6 +98,7 @@ while True:
       #exclusão do cadastro
       if (respostaDeletar == "s"):
           del nomeUsuario[numDelete - 1]
+          print("Usuário deletado com sucesso!")
           tamanhoLista -= 1
 
     case 5:
