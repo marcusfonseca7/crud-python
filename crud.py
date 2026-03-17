@@ -1,3 +1,6 @@
+#declaração da lista
+nomeUsuario = []
+
 while True:
 
   print("|---------- CRUD ----------|")
@@ -32,12 +35,9 @@ while True:
         except ValueError:
             print("Letras não são aceitas, por favor insira números. ")
 
-      #definição do tamanho do vetor
-      nomeUsuario = [None] * qtdUsuario
-
       #cadastros e contador de lista
       for i in range(qtdUsuario):
-        nomeUsuario[i] = input("Nome: ")
+        nomeUsuario.append(input("Nome: "))
 
     case 2:
       #listagem de cadastros
@@ -62,7 +62,7 @@ while True:
             else:
                 print("Digite uma opção válida, por favor. ")
           except ValueError:
-              print("Letras não são aceitas, por favor insira números, de 1 a 5.")
+              print(f"Letras não são aceitas, por favor insira números, de 1 a {len(nomeUsuario)}.")
 
         respostaEditar = input(f"Tem certeza que deseja editar o cadastro: '{nomeUsuario[numEdit - 1]}'? [s/n] ")
 
@@ -73,6 +73,8 @@ while True:
         #edição
         if (respostaEditar == "s"):
           nomeUsuario[numEdit - 1] = (input('Insira o nome correto: '))
+        else:
+          print("Operação Cancelada!")
       else:
         print("Nenhum usuário cadastrado até o momento!")
 
@@ -91,7 +93,7 @@ while True:
             else:
                 print("Digite uma opção válida, por favor. ")
           except ValueError:
-              print("Letras não são aceitas, por favor insira números, de 1 a 5.")
+              print(f"Letras não são aceitas, por favor insira números, de 1 a {len(nomeUsuario)}.")
               
         respostaDeletar = input(f"Tem certeza que deseja deletar o cadastro: '{nomeUsuario[numDelete - 1]}'? [s/n] ")
 
@@ -103,6 +105,8 @@ while True:
         if (respostaDeletar == "s"):
             del nomeUsuario[numDelete - 1]
             print("Usuário deletado com sucesso!")
+        else:
+          print("Operação Cancelada!")
       else: 
         print("Nenhum usuário cadastrado até o momento!")
         
