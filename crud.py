@@ -35,9 +35,18 @@ while True:
         except ValueError:
             print("Letras não são aceitas, por favor insira números. ")
 
-      #cadastros e contador de lista
+
+      #valida se é vazio ou nao, uso de variavel temporaria e strip
       for i in range(qtdUsuario):
-        nomeUsuario.append(input("Nome: "))
+        while True:
+            nomeDigitado = (input("Nome: "))
+            if (nomeDigitado.strip() != ""):
+              break
+            else:
+              print("Digite um nome, por favor. ")
+              
+        #depois de validado, entra na lista
+        nomeUsuario.append(nomeDigitado)
 
     case 2:
       #listagem de cadastros
