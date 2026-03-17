@@ -59,6 +59,26 @@ Além disso, busquei melhorar a experiência do usuário mesmo em um ambiente de
 1. "```pip install ipython```" (Para o programa conseguir limpar o terminal. É levinho, pode baixar! :) )
 2. "```python crud.py```" no terminal
 
+## 📸 Demonstração
+
+### 1. Menu
+<img src="img/menu.png" width="300px" align="center">
+
+### 2. Cadastro
+<img src="img/cadastro.png" width="300px" align="center">
+
+### 3. Lista Inicial
+<img src="img/listagemInicial.png" width="300px" align="center">
+
+### 4. Exclusão
+<img src="img/exclusao.png" width="300px" align="center">
+
+### 5. Edição
+<img src="img/edicao.png" width="300px" align="center">
+
+### 6. Lista Final
+<img src="img/listagemFinal.png" width="300px" align="center">
+
 ## 👨‍💻 Autor
 
-Desenvolvido por Marcus Vinicius
+### Desenvolvido por Marcus Vinicius
